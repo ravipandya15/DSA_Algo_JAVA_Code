@@ -9,6 +9,7 @@ public class Sliding_Window_Maximum_239 {
         int[] arr = { 1, 3, -1, -3, 5, 3, 6, 7 };
         int k = 3;
         var result = MaxSlidingWindow(arr, k);
+        System.out.println(result);
     }
 
     // TC -> O(N) + O(N) = O(N)

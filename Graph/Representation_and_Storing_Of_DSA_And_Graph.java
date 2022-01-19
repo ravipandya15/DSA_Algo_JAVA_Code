@@ -7,7 +7,7 @@ public class Representation_and_Storing_Of_DSA_And_Graph {
     public static void main(String[] args) {
         System.out.println("Hello World!");
         int n = 3;
-        int m = 3;
+        // int m = 3;
 
 
         // 1st way -> using Adjecency Matrix
