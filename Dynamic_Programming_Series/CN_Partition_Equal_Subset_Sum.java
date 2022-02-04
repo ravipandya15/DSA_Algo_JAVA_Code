@@ -3,8 +3,8 @@ package Dynamic_Programming_Series;
 public class CN_Partition_Equal_Subset_Sum {
     
     // Tabulation
-    // TC -> O(N * target)
-    // SC -> O(N) + O(N * target) 
+    // TC -> O(N) + O(N * target)
+    // SC -> O(N * target) 
     public static boolean subsetSumToK(int n, int k, int[] arr){
         boolean[][] dp = new boolean[n][k+1];
 
@@ -14,7 +14,7 @@ public class CN_Partition_Equal_Subset_Sum {
             dp[i][0] = true;
         }
 
-        dp[0][arr[0]] = true;
+        if (arr[0] <= k) dp[0][arr[0]] = true;
 
         for (int index = 1; index < n; index++)
         {

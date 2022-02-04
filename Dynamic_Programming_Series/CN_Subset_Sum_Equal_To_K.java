@@ -68,7 +68,7 @@ public class CN_Subset_Sum_Equal_To_K {
 
     // Tabulation
     // TC -> O(N * target)
-    // SC -> O(N) + O(N * target) 
+    // SC -> O(N * target) 
     public static boolean subsetSumToK3(int n, int k, int[] arr){
         boolean[][] dp = new boolean[n][k+1];
 
@@ -78,7 +78,7 @@ public class CN_Subset_Sum_Equal_To_K {
             dp[i][0] = true;
         }
 
-        dp[0][arr[0]] = true;
+        if (arr[0] <= k) dp[0][arr[0]] = true;
 
         for (int index = 1; index < n; index++)
         {
@@ -97,7 +97,7 @@ public class CN_Subset_Sum_Equal_To_K {
 
     // Space optimization
     // TC -> O(N * target)
-    // SC -> O(N * target) 
+    // SC -> O(target) 
     public static boolean subsetSumToK4(int n, int k, int[] arr){
         boolean[] prev = new boolean[k+1];
 
