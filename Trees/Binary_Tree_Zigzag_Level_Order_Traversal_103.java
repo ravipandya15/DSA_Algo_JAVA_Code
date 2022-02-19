@@ -57,4 +57,45 @@ public class Binary_Tree_Zigzag_Level_Order_Traversal_103 {
         }
         return result;
     }
+
+
+    public static ArrayList<Integer> zigzagLevelOrder_GFG(TreeNode root) {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        List<List<Integer>> result = new LinkedList<List<Integer>>();
+        if (root == null) return list;
+
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.add(root);
+        boolean leftToRight = true;
+
+        while (!queue.isEmpty())
+        {
+            int size = queue.size();
+            List<Integer> tempList = new ArrayList<Integer>(size);
+            for (int i = 0; i < size; i++)
+            {
+                TreeNode temp = queue.peek();
+                queue.poll();
+
+                if (temp.left != null) queue.add(temp.left);
+                if (temp.right != null) queue.add(temp.right);
+
+                if (leftToRight) tempList.add(temp.val);
+                else tempList.add(0,temp.val);
+            }
+            // if (!leftToRight)
+            // {
+            //    Collections.reverse(tempList);
+            // }
+            result.add(tempList);
+            leftToRight = !leftToRight;
+        }
+
+        for (var item : result)
+        {
+            list.addAll(item);
+        }
+
+        return list;
+    }
 }
