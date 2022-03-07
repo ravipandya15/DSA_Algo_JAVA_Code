@@ -1,9 +1,16 @@
 package Dynamic_Programming_Series;
 
-import java.util.Arrays;
-
 public class CN_Number_of_ways_to_clear_the_pit {
     
+
+    // k is static so it will be solved using 1D array
+    // Check this
+    // below code was giving TLE -> may be used 2D array -> 1D array will work
+
+
+
+
+
     public static int solve(int n, int k, int mod, int[][] dp)
     {
         // base case
