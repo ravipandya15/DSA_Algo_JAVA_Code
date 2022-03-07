@@ -10,8 +10,8 @@ public class GFG_Infix_to_Postfix {
         for (int i = 0; i < exp.length(); i++)
         {
             // character is operand
-            if (exp.charAt(i) )
+            // if (exp.charAt(i) )
         }
-
+        return "";
 	} 
 }
