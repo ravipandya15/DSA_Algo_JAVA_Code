@@ -26,7 +26,7 @@ public class CN_Time_To_Burn_Tree {
         while (!q.isEmpty())
         {
             BinaryTreeNode<Integer> node = q.peek();
-            q.poll();
+            q.poll(); 
             if (node.data == start) target = node;
 
             if (node.left != null) 
