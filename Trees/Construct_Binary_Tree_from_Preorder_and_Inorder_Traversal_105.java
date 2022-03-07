@@ -46,5 +46,4 @@ public class Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal_105 {
         TreeNode root = buildTree(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1, inMap);
         return root;
     }
-
 }

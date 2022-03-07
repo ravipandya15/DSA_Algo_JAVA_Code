@@ -31,4 +31,23 @@ public class Lowest_Common_Ancestor_of_a_Binary_Tree_236 {
         }
     }
 
+    public TreeNode lowestCommonAncestor_GFG(TreeNode root, int p, int q) {
+        if (root == null || root.val == p || root.val == q) return root;
+
+        TreeNode left = lowestCommonAncestor_GFG(root.left, p, q);
+        TreeNode right = lowestCommonAncestor_GFG(root.right, p, q);
+
+        // this will also work
+        //if (left != null && right != null) return root;
+        //else if (left != null) return left;
+        //else return right;
+
+        if (left == null && right != null) return right;
+        else if (right == null && left != null) return left;
+        else
+        { // both left and right are not null, we found our ans
+            return root;
+        }
+    }
+
 }
