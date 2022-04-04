@@ -35,6 +35,60 @@ class Tuple
 
 public class Vertical_Order_Traversal_of_a_Binary_Tree_987 {
     
+    public List<List<Integer>> verticalTraversal_1(TreeNode root) {
+        TreeMap<Integer, TreeMap<Integer, PriorityQueue<Integer>>> map = new TreeMap<>();
+        Queue<Tuple> queue = new LinkedList<Tuple>();
+        queue.add(new Tuple(root, 0, 0));
+
+        while(!queue.isEmpty())
+        {
+            Tuple tuple = queue.peek();
+            queue.poll();
+
+            TreeNode node = tuple.node;
+            int x = tuple.row;
+            int y = tuple.col;
+
+            if (!map.containsKey(x))
+            {
+                map.put(x, new TreeMap<>());
+            }
+
+            if (!map.get(x).containsKey(y))
+            {
+                map.get(x).put(y, new PriorityQueue<>());
+            }
+
+            map.get(x).get(y).add(node.val);
+
+            if (node.left != null)
+            {
+                queue.add(new Tuple(node.left, x-1, y+1));
+            }
+            if (node.right != null)
+            {
+                queue.add(new Tuple(node.right, x+1, y+1));
+            }
+        }
+
+        List<List<Integer>> res = new ArrayList<>();
+
+        for (TreeMap<Integer, PriorityQueue<Integer>> vertical : map.values())
+        {
+            List<Integer> ans = new ArrayList<>();
+            for (PriorityQueue<Integer> level : vertical.values())
+            {
+                while (!level.isEmpty())
+                {
+                    ans.add(level.peek());
+                    level.poll();
+                }
+            }
+            res.add(ans);
+        }
+        return res;
+    }
+    
     public List<List<Integer>> verticalTraversal(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
 
@@ -87,5 +141,4 @@ public class Vertical_Order_Traversal_of_a_Binary_Tree_987 {
         }
         return res;
     }
-    
 }

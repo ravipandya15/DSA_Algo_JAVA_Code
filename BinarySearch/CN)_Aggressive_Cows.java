@@ -6,7 +6,7 @@ class Solution
 {
 	public static void main(String Args[])
 	{
-		System.out.println("Painter's Partition Problem");
+		System.out.println("Aggressive Cows");
 		ArrayList<Integer> arr = new ArrayList<Integer>();
 		arr.add(4);
 		arr.add(2);

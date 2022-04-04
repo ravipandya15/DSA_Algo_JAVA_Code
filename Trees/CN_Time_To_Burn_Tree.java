@@ -5,14 +5,14 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 class BinaryTreeNode<T> {
-        T data;
-        BinaryTreeNode<T> left;
-        BinaryTreeNode<T> right;
-        
-        public BinaryTreeNode(T data) {
-            this.data = data;
-        }
+    T data;
+    BinaryTreeNode<T> left;
+    BinaryTreeNode<T> right;
+    
+    public BinaryTreeNode(T data) {
+        this.data = data;
     }
+}
 
 public class CN_Time_To_Burn_Tree {
     

@@ -26,7 +26,7 @@ class TreeNode {
 
 public class LeetCode_Largest_BST_In_Binary_Tree {
     
-    private NodeValue LargestBSTSubTReeHelper(TreeNode root)
+    private static NodeValue LargestBSTSubTReeHelper(TreeNode root)
     {
         if (root == null) return new NodeValue(Integer.MAX_VALUE, Integer.MIN_VALUE, 0);
 

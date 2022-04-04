@@ -72,6 +72,36 @@ public class Kth_Smallest_Element_in_a_BST_230 {
         return ans.get(k-1);
     }
 
+    private static int inOrder_LoveBubber(TreeNode root, int k, int[] count)
+    {
+        // base case
+        if (root == null) return -1;
+
+        // check left part
+        int left = inOrder_LoveBubber(root.left, k, count);
+        if (left != -1)
+        {
+            return left;
+        }
+
+        // check current node
+        count[0]++;
+        if (count[0] == k)
+        {
+            return root.val;
+        }
+
+        // as we not found on left part so whatever we get from right part will return it
+        return inOrder_LoveBubber(root.right, k, count);
+    }
+
+    // Recursion -> Love bubber approach
+    public int kthSmallest_LoveBubber(TreeNode root, int k) {
+        //Recursion
+        int[] count = {0};
+        return inOrder_LoveBubber(root, k, count);
+    }
+
     //Iterative
     public int kthSmallest2(TreeNode root, int k) {
         //Iterative

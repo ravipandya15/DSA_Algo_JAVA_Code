@@ -28,7 +28,7 @@ public class GFG_The_Celebrity_Problem {
             int b = st.peek();
             st.pop();
 
-            if (knows(a, b, M, n))
+            if (knows(a, b, M, n)) // check if a knows b or not
             {
                 // ingore a and push b
                 st.push(b);
