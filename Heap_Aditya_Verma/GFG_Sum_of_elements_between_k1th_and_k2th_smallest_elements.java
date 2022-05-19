@@ -7,17 +7,17 @@ public class GFG_Sum_of_elements_between_k1th_and_k2th_smallest_elements {
     
     private static long KthSmallestElement(long A[], long N, long k)
     {
-        PriorityQueue<Long> mini = new PriorityQueue<Long>(Collections.reverseOrder());
+        PriorityQueue<Long> maxi = new PriorityQueue<Long>(Collections.reverseOrder());
         for (int i = 0; i < N; i++)
         {
-            mini.add(A[i]);
-            if (mini.size() > k)
+            maxi.add(A[i]);
+            if (maxi.size() > k)
             {
-                mini.poll();
+                maxi.poll();
             }
         }
 
-        return mini.peek();
+        return maxi.peek();
     }
 
     public static long sumBetweenTwoKth(long A[], long N, long K1, long K2)
