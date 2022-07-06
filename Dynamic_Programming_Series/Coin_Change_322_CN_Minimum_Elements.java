@@ -2,7 +2,7 @@ package Dynamic_Programming_Series;
 
 import java.util.Arrays;
 
-public class CN_Minimum_Elements {
+public class Coin_Change_322_CN_Minimum_Elements {
 
     // Minimum Coins
 

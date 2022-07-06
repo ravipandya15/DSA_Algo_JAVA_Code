@@ -85,5 +85,4 @@ public class GFG_Max_rectangle {
 
         return area;
     }
-
 }

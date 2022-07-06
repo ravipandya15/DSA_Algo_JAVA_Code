@@ -2,7 +2,7 @@ package Dynamic_Programming_Series;
 
 import java.util.Arrays;
 
-public class CN_Ways_To_Make_Coin_Change {
+public class Coin_Change_2_518_CN_Ways_To_Make_Coin_Change {
     
     public static long solve(int index, int target, int[] arr)
     {
@@ -125,6 +125,7 @@ public class CN_Ways_To_Make_Coin_Change {
 
                 cur[T] = notTake + take;
             }
+            prev = cur;
         }
 
         return prev[value];
