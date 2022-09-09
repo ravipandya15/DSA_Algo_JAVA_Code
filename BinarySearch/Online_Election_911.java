@@ -5,6 +5,7 @@ import java.util.HashMap;
 class TopVotedCandidate {
     HashMap<Integer, Integer> time_lead;
     HashMap<Integer, Integer> person_votes;
+    
     int[] time;
     public TopVotedCandidate(int[] persons, int[] times) {
         time_lead = new HashMap<>();

@@ -5,9 +5,9 @@ public class Champagne_Tower_799 {
         double[][] matrix = new double[101][101];
         matrix[0][0] = poured;
 
-        for (int i = 0; i < query_row; i++)
+        for (int i = 0; i <= query_row; i++)
         {
-            for (int j = 0; j < query_glass; j++)
+            for (int j = 0; j <= query_glass; j++)
             {
                 if (matrix[i][j] > 1)
                 {

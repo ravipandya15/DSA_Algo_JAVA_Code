@@ -2,7 +2,7 @@ package BinarySearch;
 import java.util.ArrayList;
 import java.util.Collections;
 
-class Solution
+class CN_Aggressive_Cows
 {
 	public static void main(String Args[])
 	{

@@ -38,7 +38,7 @@ public class GFG_The_Celebrity_Problem {
             }
         }
 
-        // now only 1 element is there in stack whih might be Potential solution
+        // now only 1 element is there in stack which might be Potential solution
         // verify
         int ans = st.peek();
         int rowCount = 0;

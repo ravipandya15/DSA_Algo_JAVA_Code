@@ -3,7 +3,7 @@ package Dynamic_Programming_Series.String;
 import java.util.Arrays;
 
 public class Decode_Ways_II_639 {
-    public int solve(int index, String s, int n, int mod, int[] dp)
+    public long solve(int index, String s, int n, int mod,long[] dp)
     {
         // base case
         if (index == n) return 1;
@@ -11,7 +11,7 @@ public class Decode_Ways_II_639 {
         if (dp[index] != -1) return dp[index];
 
         if (s.charAt(index) == '0') return 0;
-        int res = 0, mul = 1;
+        long res = 0, mul = 1;
 
         // case 1
         if (s.charAt(index) == '*') mul = 9;
@@ -40,6 +40,13 @@ public class Decode_Ways_II_639 {
                     if (s.charAt(index) == '1') option = 9;
                     else option = 6;
                 }
+                else
+                {
+                    if (Integer.parseInt(s.substring(index, index + 2)) <= 26)
+                    {
+                        option = 1;
+                    }
+                }
             }
 
             if (option > 0) res += option * solve(index + 2, s, n, mod, dp) % mod;
@@ -51,8 +58,8 @@ public class Decode_Ways_II_639 {
     public int numDecodings(String s) {
         int mod = 1000000007;
         int n = s.length();
-        int[] dp = new int[n];
+        long[] dp = new long[n];
         Arrays.fill(dp, -1);
-        return solve(0, s, n, mod, dp);
+        return (int)solve(0, s, n, mod, dp);
     }
 }

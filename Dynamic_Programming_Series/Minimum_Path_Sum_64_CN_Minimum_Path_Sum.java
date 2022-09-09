@@ -2,7 +2,7 @@ package Dynamic_Programming_Series;
 
 import java.util.Arrays;
 
-public class CN_Minimum_Path_Sum {
+public class Minimum_Path_Sum_64_CN_Minimum_Path_Sum {
     
     public static int solve(int i, int j, int[][] grid)
     {

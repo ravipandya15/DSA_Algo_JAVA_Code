@@ -3,13 +3,13 @@ package Dynamic_Programming_Series.String;
 import java.util.Arrays;
 
 public class Count_Number_of_Texts_2266 {
-    public static int solve(int index, String s, int mod, int n,int[] dp)
+    public static long solve(int index, String s, int mod, int n,long[] dp)
     {
         if (index == n) return 1;
 
         if (dp[index] != -1) return dp[index];
 
-        double count = 0;
+        long count = 0;
         char ch = s.charAt(index);
 
         count = (count + solve(index + 1, s, mod, n, dp)) % mod;
@@ -25,28 +25,28 @@ public class Count_Number_of_Texts_2266 {
                 }
             }
         }
-        return dp[index] = (int)count % mod;
+        return dp[index] = count % mod;
     }
 
     // memoization
     public int countTexts(String s) {
         int mod = (int)1e9 + 7;
         int n = s.length();
-        int[] dp = new int[n];
+        long[] dp = new long[n];
         Arrays.fill(dp, -1);
-        return solve(0, s, mod, n, dp);
+        return (int)solve(0, s, mod, n, dp);
     }
 
     // tabulation
     public int countTexts_1(String s) {
         int mod = (int)1e9 + 7;
         int n = s.length();
-        int[] dp = new int[n+1];
+        long[] dp = new long[n+1];
         dp[n] = 1;
 
         for (int index = n-1; index >= 0; index--)
         {
-            double count = 0;
+            long count = 0;
             char ch = s.charAt(index);
 
             count = (count + dp[index + 1]) % mod;
@@ -62,8 +62,8 @@ public class Count_Number_of_Texts_2266 {
                     }
                 }
             }
-            dp[index] = (int)count % mod;
+            dp[index] = count % mod;
         }
-        return dp[0];
+        return (int)dp[0];
     }
 }

@@ -11,7 +11,7 @@ public class String_to_Integer_atoi_8 {
 
         s = s.trim();
 
-        s = s.substring(i);
+        //s = s.substring(i); -> NOT REQUIRE
 
         if (s.length() == 0) return 0;
         int sign = +1;

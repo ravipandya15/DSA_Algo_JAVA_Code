@@ -1,7 +1,7 @@
 package BinarySearch;
 import java.util.ArrayList;
 
-class Solution
+class CN_Allocate_Books
 {
 	public static void main(String Args[])
 	{

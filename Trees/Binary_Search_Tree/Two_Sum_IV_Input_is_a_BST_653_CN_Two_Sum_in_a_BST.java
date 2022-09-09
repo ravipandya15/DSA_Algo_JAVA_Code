@@ -1,9 +1,9 @@
-package Trees.Love_Bubber_Tree_Questions.Binary_Search_Tree;
+package Trees.Binary_Search_Tree;
 
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class CN_Two_Sum_in_a_BST {
+public class Two_Sum_IV_Input_is_a_BST_653_CN_Two_Sum_in_a_BST {
     
     class BinaryTreeNode<T> {
 	    T data;
@@ -113,30 +113,30 @@ public class CN_Two_Sum_in_a_BST {
     // TC -> O(N)
     // SC -> O(H)
     public static boolean twoSumInBST_2(BinaryTreeNode<Integer> root, int target) {
-        // correct code
-        // if (root == null) return false;
+        //correct code
+        if (root == null) return false;
 
-        // BinaryIterator l = new BinaryIterator(root, false);
-        // BinaryIterator r = new BinaryIterator(root, true);
+        BinaryIterator l = new BinaryIterator(root, false);
+        BinaryIterator r = new BinaryIterator(root, true);
 
-        // int i = l.Next();
-        // int j = r.Next();
+        int i = l.Next();
+        int j = r.Next();
 
-        // while (i < j)
-        // {
-        //     if ((i + j) == target)
-        //     {
-        //         return true;
-        //     }
-        //     if ((i + j) > target)
-        //     {
-        //         j = r.Next();
-        //     }
-        //     else
-        //     {
-        //         i = l.Next();
-        //     }
-        // }
+        while (i < j)
+        {
+            if ((i + j) == target)
+            {
+                return true;
+            }
+            if ((i + j) > target)
+            {
+                j = r.Next();
+            }
+            else
+            {
+                i = l.Next();
+            }
+        }
 
          return false;
     }

@@ -51,16 +51,17 @@ public class Maximal_Square_221 {
 
         int size = 0;
 
-        for (int i = 1; i < m; i++)
+        for (int i = 0; i < m; i++)
         {
             int[] cur = new int[n];
-            for (int j = 1; j < n; j++)
+
+            for (int j = 0; j < n; j++)
             {
                 if (i == 0 || j == 0 || matrix[i][j] == '0')
                 {
-                    cur[j] = Math.min(prev[j-1], Math.min(cur[j-1], prev[j])) + 1;
+                    cur[j] = matrix[i][j] - '0';
                 }
-                else cur[j] = matrix[i][j] - '0';
+                else cur[j] = Math.min(prev[j-1], Math.min(cur[j-1], prev[j])) + 1;
                 size = Math.max(size, cur[j]);
             }
             prev = cur;

@@ -65,7 +65,7 @@ class LeetCode
     public static int FindPivot(int[] arr)
     {
         int start = 0;
-        int end = arr.Length - 1;
+        int end = arr.length - 1;
         int mid = start + (end - start) / 2;
 
         while (start < end)

@@ -10,7 +10,7 @@ class Solution
 	{
 		System.out.println("N-Queen Problem");
 		int n = 4;
-        var result = SolveNQueens(n);
+        List<List<String>> result = SolveNQueens(n);
 	}
 	
 	public static List<List<String>> SolveNQueens(int n)

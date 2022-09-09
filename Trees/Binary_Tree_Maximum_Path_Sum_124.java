@@ -24,6 +24,7 @@ public class Binary_Tree_Maximum_Path_Sum_124 {
     {
         if (node == null) return 0;
 
+        // value might be -ve, so better not to take it. so 0 is default value.
         int leftSum = Math.max(0, maxPathDown(node.left, maxi));
         int rightSum = Math.max(0, maxPathDown(node.right, maxi));
 

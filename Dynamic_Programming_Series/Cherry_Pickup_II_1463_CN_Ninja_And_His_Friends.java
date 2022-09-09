@@ -1,6 +1,6 @@
 package Dynamic_Programming_Series;
 
-public class CN_Ninja_And_His_Friends {
+public class Cherry_Pickup_II_1463_CN_Ninja_And_His_Friends {
     
     public static int solve(int i, int j1, int j2, int n, int m, int[][] grid)
     {
