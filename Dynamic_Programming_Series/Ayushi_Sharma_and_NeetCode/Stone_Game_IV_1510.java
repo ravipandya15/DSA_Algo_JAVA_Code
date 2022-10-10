@@ -14,6 +14,8 @@ public class Stone_Game_IV_1510 {
         }
         return dp[n] = 0;
     }
+
+    // Memoization
     public boolean winnerSquareGame(int n) {
         int[] dp = new int[n+1];
         Arrays.fill(dp, -1);
@@ -21,20 +23,22 @@ public class Stone_Game_IV_1510 {
     }
 
 
-    // not working
-
-    // public boolean winnerSquareGame_2(int n) {
-    //     int[] dp = new int[n+1];
+    // Tabulation
+    public boolean winnerSquareGame_2(int n) {
+        int[] dp = new int[n+1];
         
-    //     for (int index = 1; index <= n; index++)
-    //     {
-    //         for (int i = 1; i * i <= index; i++)
-    //         {
-    //             // if 2nd player return false then first will win; 
-    //             //if (dp[index - i * i] == 0) return dp[n] = 1;
-    //             dp[i] = 1 - dp[index - i*i];
-    //         }
-    //     }
-    //     return dp[n] == 1 ? true : false;
-    // }
+        for (int index = 1; index <= n; index++)
+        {
+            for (int i = 1; i * i <= index; i++)
+            {
+                // if 2nd player return false then first will win; 
+                if (dp[index - i * i] == 0)
+                {
+                    dp[index] = 1;
+                    break;
+                }
+            }
+        }
+        return dp[n] == 1 ? true : false;
+    }
 }

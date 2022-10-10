@@ -27,7 +27,7 @@ public class Find_Minimum_in_Rotated_Sorted_Array_II_154 {
     public int FindMin(int[] nums) {
         int n = nums.length;
         int pivot = findPivot(nums, n);
-        if (pivot - 1 >= 0 && nums[pivot] > nums[pivot - 1])
+        if (pivot - 1 >= 0 && nums[pivot] > nums[pivot - 1]) // for [1,3,3] not rotated at all.
         {
             return nums[0];
         }

@@ -36,14 +36,17 @@ public class Stone_Game_III_1406 {
         int n = stoneValue.length;
         int[] dp = new int[n+1];
 
+        // need to write DP instead of solve
+
+
         for (int index = n-1; index >= 0; index--)
         {
             int ans = Integer.MIN_VALUE;
-            ans = Math.max(ans, stoneValue[index] - solve(index + 1, stoneValue, n, dp));
+            ans = Math.max(ans, stoneValue[index] - dp[index + 1]);
             if (index + 1 < n) ans = Math.max(ans, stoneValue[index] + stoneValue[index + 1] - 
-                                                                solve(index + 2, stoneValue, n, dp));
+                                                                dp[index + 2]);
             if (index + 2 < n) ans = Math.max(ans, stoneValue[index] + stoneValue[index + 1] + stoneValue[index + 2] - 
-                                                                solve(index + 3, stoneValue, n, dp));
+                                                                dp[index + 3]);
 
             dp[index] = ans;
         }

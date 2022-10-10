@@ -3,7 +3,9 @@ package Greedy;
 public class Broken_Calculator_991 {
     public int brokenCalc(int startValue, int target) {
         // base case
-        if (startValue >= target) 
+        // if (startValue == target) return 0;
+        // if (target < startValue) return startValue - target;
+        if (startValue >= target)
         {
             return startValue - target;
         }

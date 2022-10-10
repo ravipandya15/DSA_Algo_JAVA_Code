@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class Combination_Sum_IV_377 {
 
+    // can also be done with index and target 
+    // 2D dp
     public static int solve(int target, int[] nums, int n, int[] dp)
     {
         // base case

@@ -35,6 +35,33 @@ public class Unique_Binary_Search_Trees_96 {
         return solve(n, dp);
     }
 
+    public static int solve(int start, int end, int[][] dp)
+    {
+        // base cases
+        if (start > end) return 1;
+        if (dp[start][end] != -1) return dp[start][end];
+
+        int count = 0;
+        for (int i = start; i <= end; i++)
+        {
+            int left = solve(start, i - 1, dp);
+            int right = solve(i + 1, end, dp);
+            count += left * right;
+        }
+
+        return dp[start][end] = count;
+    }
+
+    // Memoization - 2
+    public int numTrees_2(int n) {
+        int[][] dp = new int[n+1][n+1];
+        for (int[] row : dp)
+        {
+            Arrays.fill(row, -1);
+        }
+        return solve(1, n, dp);
+    }
+
     // Tabulation
     public int numTrees_1(int n) {
         int[] dp = new int[n+1];

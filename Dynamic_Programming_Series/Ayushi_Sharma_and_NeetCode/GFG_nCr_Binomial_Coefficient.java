@@ -4,7 +4,7 @@ public class GFG_nCr_Binomial_Coefficient {
     public static int nCr(int n, int r){
         // base cases
         if (r > n) return 0;
-        if (n-r < r) r = n - r;
+        if (n-r < r) r = n - r; // or (r > n - r) r = n - r;
 
         int[] dp = new int[r+1];
         dp[0] = 1;

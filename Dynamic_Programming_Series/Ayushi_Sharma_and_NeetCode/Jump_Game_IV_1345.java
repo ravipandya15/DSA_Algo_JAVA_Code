@@ -48,7 +48,7 @@ public class Jump_Game_IV_1345 {
                         q.add(j);
                     }
                 }
-                map.get(arr[i]).clear();
+                map.get(arr[i]).clear(); // IMP -> key will exist -> just clear the list value associated with that key
             }
             step++;
         }
