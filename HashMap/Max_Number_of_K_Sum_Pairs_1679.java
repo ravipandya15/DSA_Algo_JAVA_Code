@@ -1,5 +1,6 @@
 package HashMap;
 import java.util.Map;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class Max_Number_of_K_Sum_Pairs_1679 {
@@ -8,6 +9,31 @@ public class Max_Number_of_K_Sum_Pairs_1679 {
     }
 
     public int maxOperations(int[] nums, int k) {
+        int n = nums.length, count = 0;
+        Arrays.sort(nums);
+        int i = 0, j = n-1;
+
+        while (i < j)
+        {
+            if (nums[i] + nums[j] == k)
+            {
+                count++;
+                i++;
+                j--;
+            }
+            else if (nums[i] + nums[j] < k)
+            {
+                i++;
+            }
+            else
+            {
+                j--;
+            }
+        }
+        return count;
+    }
+
+    public int maxOperations_1(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<>();
         int count = 0;
 

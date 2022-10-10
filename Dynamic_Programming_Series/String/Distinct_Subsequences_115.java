@@ -144,7 +144,8 @@ public class Distinct_Subsequences_115 {
             {
                 if (s.charAt(i-1) == t.charAt(j-1))
                 {
-                    cur[j] = prev[j-1] + prev[j];                }
+                    cur[j] = prev[j-1] + prev[j];
+                }
                 else
                 {
                    cur[j] = prev[j];

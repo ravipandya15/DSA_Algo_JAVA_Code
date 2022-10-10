@@ -49,7 +49,7 @@ public class Swap_Nodes_in_Pairs_24 {
             count++;
         }
 
-        head.next = swapPairs(next);
+        head.next = swapPairs_1(next);
         return prev;
     }
 }

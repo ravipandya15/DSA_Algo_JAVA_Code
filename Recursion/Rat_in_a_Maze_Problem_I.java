@@ -61,6 +61,91 @@ public class Rat_in_a_Maze_Problem_I {
         }
     }
 
+
+    private static boolean isSafe_2(int newX, int newY, int[][] m, int n, int[][] visited)
+    {
+        if (newX >= 0 && newX < n && newY >= 0 && newY < n && m[newX][newY] == 1 && visited[newX][newY] == 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    private static void solve_2(int[][] m, int n, int x, int y, String ans, ArrayList<String> result, int[][] visited)
+    {
+        // base case
+        if (x == n-1 && y == n-1)
+        {
+            result.add(new String(ans));
+            return;
+        }
+
+        // lexicographical order > DLRU
+
+        // down
+        int newX = x + 1;
+        int newY = y;
+        if (isSafe_2(newX, newY, m, n, visited))
+        {
+            visited[newX][newY] = 1;
+            solve_2(m, n, newX, newY, ans + "D", result, visited);
+            visited[newX][newY] = 0;
+        }
+
+        // left
+        newX = x;
+        newY = y - 1;
+        if (isSafe_2(newX, newY, m, n, visited))
+        {
+            visited[newX][newY] = 1;
+            solve_2(m, n, newX, newY, ans + "L", result, visited);
+            visited[newX][newY] = 0;
+        }
+
+        // right
+        newX = x;
+        newY = y + 1;
+        if (isSafe_2(newX, newY, m, n, visited))
+        {
+            visited[newX][newY] = 1;
+            solve_2(m, n, newX, newY, ans + "R", result, visited);
+            visited[newX][newY] = 0;
+        }
+
+        // Up
+        newX = x - 1;
+        newY = y;
+        if (isSafe_2(newX, newY, m, n, visited))
+        {
+            visited[newX][newY] = 1;
+            solve_2(m, n, newX, newY, ans + "U", result, visited);
+            visited[newX][newY] = 0;
+        }
+    }
+    
+    public static ArrayList<String> findPath_2(int[][] m, int n) {
+        ArrayList<String> result = new ArrayList<String>();
+        if (m[0][0] == 0)
+            return result;
+
+        int[][] visited = new int[n][n];
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                visited[i][j] = 0;
+            }
+        }
+        int x = 0, y = 0;
+        String ans = "";
+        visited[0][0] = 1;
+        solve(m, n, x, y, ans, result, visited);
+        return result;
+    }
+
+
+
+
     // Approach - 1
     private static boolean isSafe(int newX, int newY, int[][] m, int n, int[][] visited)
     {

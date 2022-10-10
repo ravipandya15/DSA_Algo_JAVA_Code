@@ -58,7 +58,7 @@ public class GFG_Kth_Ancestor_in_a_Tree {
     {
         int[] count = {k};
         Node ans = solve(root, count, node);
-        if (ans == null || ans.data == node)  //ans.data == node -> edge case
+        if (ans == null || ans.data == node)  //ans.data == node -> edge case means count[0] > 0
         {
             return -1;
         }
