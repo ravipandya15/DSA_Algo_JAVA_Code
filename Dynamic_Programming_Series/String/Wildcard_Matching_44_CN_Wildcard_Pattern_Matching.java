@@ -1,6 +1,6 @@
 package Dynamic_Programming_Series.String;
 
-public class CN_Wildcard_Pattern_Matching {
+public class Wildcard_Matching_44_CN_Wildcard_Pattern_Matching {
     
     public static boolean solve(int i, int j, String pattern, String text)
     {

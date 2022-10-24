@@ -5,42 +5,40 @@ import java.util.List;
 
 public class Generate_Parentheses_22 {
 
-    // NOT working
 
-
-    public static List<String> solve(int n)
+    public void solve(int openN, int closeN, int n, List<String> list, StringBuilder sb)
     {
-        List<String> result = new ArrayList<>();
-        if (n == 1)
+        // base case
+        if (openN == n && closeN == n)
         {
-            result.add("()");
-            return result;
+            //list.add(sb.toString()); ---> this will also work
+            list.add(new String(sb.toString()));
+            return;
         }
 
-        List<String> list = solve(n-1);
-        int k = list.size();
-        for (int i = 0; i < k; i++)
+        // add open
+        if (openN < n)
         {
-            String s = list.get(i);
-            result.add("(" + s + ")");
-            //result.add(s + "()");
-            //if (i < k - 1) result.add("()" + s);
+            int len = sb.length();
+            sb.append("(");
+            solve(openN + 1, closeN, n, list, sb);
+            sb.setLength(len);
         }
-        for (int i = 0; i < k; i++)
+
+        // add close
+        if (closeN < openN)
         {
-            String s = list.get(i);
-            result.add(s + "()");
-            if (i < k - 1) result.add("()" + s);
+            int len = sb.length();
+            sb.append(")");
+            solve(openN, closeN + 1, n, list, sb);
+            sb.setLength(len);
         }
-        // for (int i = 0; i < k; i++)
-        // {
-        //     String s = list.get(i);
-        //     //result.add(s + "()");
-        //     if (i < k - 1) result.add("()" + s);
-        // }
-        return result;
     }
+    
     public List<String> generateParenthesis(int n) {
-        return solve(n);
+        List<String> list = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+        solve(0, 0, n, list, sb);
+        return list;
     }
 }

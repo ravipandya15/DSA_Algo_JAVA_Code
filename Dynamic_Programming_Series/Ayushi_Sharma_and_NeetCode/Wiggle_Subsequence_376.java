@@ -24,13 +24,13 @@ public class Wiggle_Subsequence_376 {
             }
             else if (prev >= 0 && nums[i] > nums[prevInd])
             {
-                prevInd = i;
                 prev += nums[i] - nums[prevInd];
+                prevInd = i;
             }
             else if (prev <= 0 && nums[i] < nums[prevInd])
             {
+                prev += (nums[i] - nums[prevInd]);
                 prevInd = i;
-                prev -= nums[i] - nums[prevInd]; 
             }
         }
         return count;
