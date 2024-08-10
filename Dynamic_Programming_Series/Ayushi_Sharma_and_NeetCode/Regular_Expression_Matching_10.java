@@ -23,7 +23,7 @@ public class Regular_Expression_Matching_10 {
             // not use *
             return solve(i, j + 2, s, p, n, m);
         }
-        if (match == 1)
+        if (match == 1) // else if is also fine as next character is * so if we go to i + 1 and j + 1 it will not match as p.charAt(i + 1) == '*' so anyway we will return false.
         {
             return solve(i + 1, j + 1, s, p, n, m);
         }
@@ -59,7 +59,7 @@ public class Regular_Expression_Matching_10 {
             // not use *
             return dp[i][j] = solve_1(i, j + 2, s, p, n, m, dp);
         }
-        if (match == 1)
+        if (match == 1) // else if is also fine as next character is * so if we go to i + 1 and j + 1 it will not match as p.charAt(i + 1) == '*' so anyway we will return false.
         {
             return dp[i][j] = solve_1(i + 1, j + 1, s, p, n, m, dp);
         }
