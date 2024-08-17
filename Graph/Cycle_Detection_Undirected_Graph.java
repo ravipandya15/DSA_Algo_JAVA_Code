@@ -43,7 +43,7 @@ public class Cycle_Detection_Undirected_Graph {
                     visited[it] = true;
                 }
                 else
-                {// means it is visited so check is it is parent or not
+                {// means it is visited so check if it is parent or not
                     if (it != parent) return true;
                 }
             }
