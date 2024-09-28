@@ -26,7 +26,7 @@ public class Sliding_Window_Maximum_239 {
             while (!deque.isEmpty() && deque.peekFirst() == i - k)
                 deque.pollFirst();
 
-            while (!deque.isEmpty() && nums[deque.peekLast()] < nums[i])
+            while (!deque.isEmpty() && nums[deque.peekLast()] <= nums[i])
                 deque.pollLast();
 
             deque.addLast(i);
