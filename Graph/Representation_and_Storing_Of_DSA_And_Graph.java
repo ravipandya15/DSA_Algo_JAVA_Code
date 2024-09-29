@@ -25,7 +25,7 @@ public class Representation_and_Storing_Of_DSA_And_Graph {
             adjList.add(new ArrayList<Integer>());
         }
 
-        // adge 1-->2
+        // adge 1-->2 ==> if undirected, if directed then only one side edge is required.
         adjList.get(1).add(2);
         adjList.get(2).add(1);
 
