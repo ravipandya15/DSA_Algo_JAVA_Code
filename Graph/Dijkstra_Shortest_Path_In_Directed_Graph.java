@@ -46,7 +46,7 @@ public class Dijkstra_Shortest_Path_In_Directed_Graph {
         }
         // dist[S] = 0; as dist[S] should be 0 as we are starting from this node. double check this.
         // didn't understand
-        PriorityQueue<Pair> pq = new PriorityQueue<Pair>(V, new Pair());
+        PriorityQueue<Pair> pq = new PriorityQueue<Pair>(V, new Pair()); // I think this is bounded priorityQueue. - size is V.
         pq.add(new Pair(S, 0));
 
         while (!pq.isEmpty())
