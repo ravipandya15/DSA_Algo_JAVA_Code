@@ -6,7 +6,7 @@ import java.util.Queue;
 public class Rotting_Oranges_994 {
     public static void main(String[] args)
     {
-        System.out.println("Implement_Stack_using_Queues_225");
+        System.out.println("Rotting Oranges");
     }
 
     public int orangesRotting(int[][] grid) {
@@ -48,7 +48,7 @@ public class Rotting_Oranges_994 {
                 }
                 k--;
             }
-            if (!q.isEmpty()) time++;
+            if (!q.isEmpty()) time++; // new oranges are rotten in last iteration so increase time
         }
 
         return (totalOranges == rottenOranges) ? time : -1;
