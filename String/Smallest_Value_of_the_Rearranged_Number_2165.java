@@ -30,7 +30,7 @@ public class Smallest_Value_of_the_Rearranged_Number_2165 {
         if (num > 0)
         {
             int index = 0;
-            for (int i = 0; i < str.length; i++)
+            for (int i = 0; i < str.length; i++) // you can't directly swap index 0 and index 1 because there may be mutiple zeros.
             {
                 if (str[i] != '0')
                 {
