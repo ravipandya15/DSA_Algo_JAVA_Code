@@ -26,7 +26,7 @@ public class DFS {
         ArrayList<Integer> dfs = new ArrayList<>();
         boolean visited[] = new boolean[V+1];
 
-        for (int i = 1; i <= V; i++)
+        for (int i = 1; i <= V; i++) // this step is for all connected components in disconnected graaph
         {
             if (!visited[i])
                 dfs(i, visited, adj, dfs);
