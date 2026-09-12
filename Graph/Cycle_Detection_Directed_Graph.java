@@ -72,7 +72,7 @@ public class Cycle_Detection_Directed_Graph {
             else if (dfsVis[it] == 1) return true;
         }
 
-        dfsVis[node] = 0;
+        dfsVis[node] = 0; // this is the main step -> which differes from cycle detection in undirected graph.
         return false;
     }
 
