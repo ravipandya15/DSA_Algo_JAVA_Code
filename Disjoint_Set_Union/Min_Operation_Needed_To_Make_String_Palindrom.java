@@ -1,4 +1,4 @@
-package com.example.lld.practise.Coding_Questions;
+package Disjoint_Set_Union;
 
 import java.util.HashMap;
 import java.util.HashSet;
