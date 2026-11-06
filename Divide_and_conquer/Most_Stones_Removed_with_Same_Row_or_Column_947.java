@@ -1,6 +1,7 @@
 package Graph.Problems;
 
 // Interesting DFS or Disjoint set problem
+// Can be solved with Disjoint set as well
 public class Most_Stones_Removed_with_Same_Row_or_Column_947 {
 
     public static int removeStones(int[][] stones) {
